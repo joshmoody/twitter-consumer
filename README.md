@@ -40,6 +40,8 @@ This library is installable via composer.
 
 ## Unit Testing.
 
+[![Build Status](https://travis-ci.org/joshmoody/twitter-consumer.png?branch=master)](https://travis-ci.org/joshmoody/twitter-consumer)
+
 This package uses PHPUnit for unit testing. To run the unit tests, you'll need to install the dependencies using Composer:
 
 	php composer.phar install --dev.
