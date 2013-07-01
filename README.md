@@ -23,7 +23,7 @@ This library is installable via composer.
 	$consumer = new joshmoody\Twitter\Consumer('your-consumer-key', 'your-consumer-secret);
 	
 	// Fetch a joshmoody\Twitter\Response object
-	$response = $consumer->request('statuses/joshmoody/timeline.json');
+	$response = $consumer->request('statuses/user_timeline.json?screen_name=joshmoody');
 	
 	// Get the result as a stdclass object
 	$timeline = $timeline->result();
