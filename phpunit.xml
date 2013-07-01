@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit bootstrap="tests/bootstrap.php">
+
+	<testsuites>
+        <testsuite name="Twitter Consumer Test Suite">
+            <directory suffix="Tests.php">./tests/joshmoody/Twitter</directory>
+        </testsuite>
+    </testsuites>
+	
+<!--
+	<php>
+	  <env name="test_key" value="your-consumer-key"/>
+	  <env name="test_secret" value="your-consumer-secret"/>
+	</php>
+-->
+
+</phpunit>
