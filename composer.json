@@ -2,7 +2,7 @@
     "name": "joshmoody/twitter-consumer",
 	"type": "library",
 	"description": "Twitter Auth-Only API Consumer",
-	
+	"license": "MIT",
 	"authors":[
 		{
 			"name": "Josh Moody",
