@@ -19,7 +19,7 @@
 	
     "require": {
         "php": ">=5.3.3",
-        "kriswallsmith/buzz": "dev-master"
+        "kriswallsmith/buzz": ">=0.10"
     },
 
     "require-dev": {
