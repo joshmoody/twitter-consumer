@@ -11,9 +11,9 @@
 	],
 	
 	"autoload":{
-		"psr-0":{
-			"joshmoody\\Twitter\\Tests": "tests/",
-			"joshmoody": "src/"
+		"psr-4":{
+			"joshmoody\\Twitter\\Tests\\": "tests/",
+			"joshmoody\\Twitter\\": "src/"
 		}
 	},
 	

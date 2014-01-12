@@ -3,7 +3,7 @@
 
 	<testsuites>
         <testsuite name="Twitter Consumer Test Suite">
-            <directory suffix="Tests.php">./tests/joshmoody/Twitter</directory>
+            <directory suffix="Tests.php">./tests</directory>
         </testsuite>
     </testsuites>
 	
