@@ -24,6 +24,8 @@ class ConsumerTests extends \joshmoody\Twitter\Tests\BaseTestCase
 	{
 		if ($this->key && $this->secret) {
 			$response = $this->consumer->request('statuses/user_timeline.json?screen_name=joshmoody');
+			
+			var_dump($response); exit;
 			$this->assertInstanceOf('joshmoody\Twitter\Response', $response);
 		} else {
 			print __CLASS__ . '\\' . __METHOD__ . "\n";
@@ -69,8 +71,12 @@ class ConsumerTests extends \joshmoody\Twitter\Tests\BaseTestCase
 
 		$rss = $response->rss();
 		
-		@$xml = simplexml_load_string($rss);
-
+		libxml_use_internal_errors(true);
+		@$xml = simplexml_load_string(utf8_encode($rss));
+		$errors = libxml_get_errors();
+		libxml_use_internal_errors(false);
+		
+		$this->assertEquals(count($errors), 0);
 		$this->assertInstanceOf('simplexmlelement', $xml->channel->title);
 	}
 }

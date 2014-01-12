@@ -18,18 +18,18 @@ class Rss
         $output[] = '<?xml version="1.0" encoding="UTF-8"?>';
         $output[] = '<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">';
         $output[] = '<channel>';
-        $output[] = sprintf('<title>%s</title>', $feed_title);
+        $output[] = sprintf('<title>%s</title>', utf8_encode($feed_title));
         $output[] = sprintf('<link>%s</link>', $feed_url);
-        $output[] = sprintf('<description>%s</description>', $feed_description);
+        $output[] = sprintf('<description>%s</description>', utf8_encode($feed_description));
         $output[] = sprintf('<pubDate>%s</pubDate>', $now);
         $output[] = sprintf('<lastBuildDate>%s</lastBuildDate>', $now);
     
         foreach($feed as $item) {
             $screen_name = htmlentities($item->user->screen_name);
-            $text_linked = Utils::linkify($item->text);
+            $text_linked = Utils::linkify(utf8_encode($item->text));
             
             $output[] = '<item>';
-            $output[] = sprintf('<title>%s</title>', $item->text);
+            $output[] = sprintf('<title>%s</title>', utf8_encode($item->text));
             $output[] = sprintf('<guid>%s</guid>', htmlentities('https://twitter.com/'.$item->user->screen_name.'/statuses/'.$item->id_str));
             $output[] = sprintf('<link>%s</link>', htmlentities('https://twitter.com/'.$item->user->screen_name.'/statuses/'.$item->id_str));
             $output[] = sprintf('<description><![CDATA[<p>%s</p>]]></description>', $text_linked);
