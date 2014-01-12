@@ -24,13 +24,12 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 	
 	public function setUp()
 	{
-		$this->consumer = new \joshmoody\Twitter\Consumer($this->key, $this->secret);		
+		$this->consumer = new \joshmoody\Twitter\Consumer($this->key, $this->secret);
 	}
 
 	protected function getMockResponse($file = NULL)
 	{
-		if (is_null($file))
-		{
+		if (is_null($file)) {
 			$file = 'tests/data/timeline.json';
 		}
 		

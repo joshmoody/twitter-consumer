@@ -13,22 +13,23 @@ class Response
 		$this->json = $response;
 	}
 	
-    /**
-     * Google is killing reader, and Twitter has killed it's RSS feed. But just in case you want to expose your tweets as RSS...
-     */
-    public function rss($opts = array())
-    {
+	/**
+	 * Google is killing reader, and Twitter has killed it's RSS feed. 
+	 * But just in case you want to expose your tweets as RSS...
+	 */
+	public function rss($opts = array())
+	{
 		return Rss::convert($this->response, $opts);
-    }
-    
-    public function json()
-    {
-	    return $this->json;
-    }
+	}
+	
+	public function json()
+	{
+		return $this->json;
+	}
 
 	
-    public function result()
-    {
-	    return $this->response;
-    }
+	public function result()
+	{
+		return $this->response;
+	}
 }
