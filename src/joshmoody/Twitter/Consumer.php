@@ -36,7 +36,7 @@ class Consumer
             }
         }
         
-        $browser = new \Buzz\Browser();
+        $browser = new \Buzz\Browser(new \Buzz\Client\Curl());
         
         $headers = array();
         $headers['Authorization'] = 'Bearer ' . $this->token;
@@ -65,7 +65,7 @@ class Consumer
     	
         $auth_key = $this->getAuthKey();
         
-        $browser = new \Buzz\Browser();
+        $browser = new \Buzz\Browser(new \Buzz\Client\Curl());
         
         $headers = array();
         $headers['Authorization'] = 'Basic ' . $auth_key;
