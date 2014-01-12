@@ -24,8 +24,6 @@ class ConsumerTests extends \joshmoody\Twitter\Tests\BaseTestCase
 	{
 		if ($this->key && $this->secret) {
 			$response = $this->consumer->request('statuses/user_timeline.json?screen_name=joshmoody');
-			
-			var_dump($response); exit;
 			$this->assertInstanceOf('joshmoody\Twitter\Response', $response);
 		} else {
 			print __CLASS__ . '\\' . __METHOD__ . "\n";
